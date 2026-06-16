@@ -42,7 +42,6 @@ while (!q.empty()) {
     int nc = c + dc[k];
 
     if (!inBounds(nr, nc)) continue;      // di luar grid
-    if (isWall(grid[nr][nc])) continue;   // tembok
 
     Cell neighbor = {nr, nc};
     if (seen.count(neighbor)) continue;   // sudah dikunjungi
