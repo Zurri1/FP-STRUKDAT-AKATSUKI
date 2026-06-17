@@ -32,7 +32,7 @@ while (!q.empty()) {
 
   visited.push_back(current); // catat sebagai explored
 
-  if (current == goal) break; // sudah sampai goal, selesai
+  if (current == goal) break; // sel yg sudah diprosessudah sampai goal, selesai
 
   int r = current.first;
   int c = current.second;
@@ -44,10 +44,10 @@ while (!q.empty()) {
     if (!inBounds(nr, nc)) continue;      // di luar grid
 
     Cell neighbor = {nr, nc};
-    if (seen.count(neighbor)) continue;   // sudah dikunjungi
+    if (seen.count(neighbor)) continue;   // skip kalau sudah pernah dimasukkan antrian
 
     seen.insert(neighbor);
-    came_from[neighbor] = current;        // rekam parent 
+    came_from[neighbor] = current;        // record parent 
     q.push(neighbor);                     // masuk antrian
   }
 }
